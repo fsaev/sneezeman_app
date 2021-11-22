@@ -39,4 +39,5 @@ void setup() {
 void loop() {
   tick_sneeze();
   tick_lcd();
+  tick_vl53();
 }
