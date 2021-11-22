@@ -6,12 +6,12 @@
 #define HOLD_DURATION 1000
 #define RELEASE_DURATION 1000
 
-uint8_t l_dose_pwm;
-uint8_t l_air_pwm;
-uint8_t l_release_valve;
+static uint8_t l_dose_pwm;
+static int8_t l_air_pwm;
+static uint8_t l_release_valve;
 
-uint32_t last_time = 0;
-uint8_t flags = 0;
+static uint32_t last_time = 0;
+static uint8_t flags = 0;
 
 #define FLAG_PRIMED 1
 #define FLAG_PUMPED 2

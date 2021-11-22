@@ -3,10 +3,10 @@
 #include "lcd.h"
 #include "sneezectl.h"
 
-LiquidCrystal* lcd;
+static LiquidCrystal* lcd;
 
-lcd_states lcd_state = L_STARTUP;
-uint32_t last_update;
+static lcd_states lcd_state = L_STARTUP;
+static uint32_t last_update;
 
 #define LCD_UPDATE_INTERVAL 100
 
