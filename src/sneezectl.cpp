@@ -88,5 +88,5 @@ void tick_sneeze(void)
                 sneeze_state = S_IDLE;
             }
             break;
-
+    }
 }
