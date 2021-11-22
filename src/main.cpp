@@ -2,6 +2,7 @@
 #include <Wire.h>
 #include "sneezectl.h"
 #include "lcd.h"
+#include "vl53.h"
 
 #define LCD_RS 12
 #define LCD_EN 11
@@ -32,6 +33,7 @@ void setup() {
 
   init_sneeze(dose_pump, air_pump, release_valve);
   init_lcd(LCD_RS, LCD_EN, LCD_DB4, LCD_DB5, LCD_DB6, LCD_DB7);
+  init_vl53();
 }
 
 void loop() {
