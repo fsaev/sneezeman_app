@@ -31,7 +31,7 @@ void init_sneeze(int dose_pwm, int air_pwm, int release_valve)
 
 void start_sneeze(void)
 {
-    if(sneeze_state != S_IDLE)
+    if(sneeze_state == S_IDLE)
     {
         last_time = millis();
         sneeze_state = S_PRIME;
