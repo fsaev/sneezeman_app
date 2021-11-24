@@ -48,6 +48,11 @@ void loop() {
   digitalWrite(heartbeat, heartbeat_state);
   heartbeat_state = !heartbeat_state;
 
+  if(trigger_get_vl53()){
+    start_sneeze();
+    trigger_reset_vl53();
+  }
+
   tick_sneeze();
   tick_lcd();
   tick_vl53();
