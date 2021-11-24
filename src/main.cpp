@@ -22,6 +22,9 @@
 #define release_valve 7
 
 #define led_output 6
+#define heartbeat 13
+
+uint8_t heartbeat_state = 0;
 
 void setup() {
   pinMode(SB_T1, OUTPUT);
@@ -31,12 +34,17 @@ void setup() {
 
   pinMode(led_output, OUTPUT);
 
+  pinMode(heartbeat, OUTPUT);
+
   init_sneeze(dose_pump, air_pump, release_valve);
   init_lcd(LCD_RS, LCD_EN, LCD_DB4, LCD_DB5, LCD_DB6, LCD_DB7);
   init_vl53();
 }
 
 void loop() {
+  digitalWrite(heartbeat, heartbeat_state);
+  heartbeat_state = !heartbeat_state;
+
   tick_sneeze();
   tick_lcd();
   tick_vl53();
