@@ -3,7 +3,7 @@
 
 #define PRIME_DURATION 1750
 #define PUMP_DURATION 1750
-#define HOLD_DURATION 1000
+#define HOLD_DURATION 3000
 #define RELEASE_DURATION 1000
 
 static uint8_t l_dose_pwm;
@@ -35,6 +35,7 @@ void start_sneeze(void)
     {
         last_time = millis();
         sneeze_state = S_PRIME;
+        Serial.println("PRIME");
     }
 }
 
@@ -70,6 +71,7 @@ void tick_sneeze(void)
                 flags = 0;
                 last_time = millis();
                 sneeze_state = S_HOLD;
+                Serial.println("HOLD");
             }
             break;
         case S_HOLD:
@@ -77,6 +79,7 @@ void tick_sneeze(void)
             {
                 last_time = millis();
                 sneeze_state = S_RELEASE;
+                Serial.println("RELEASE");
             }
             break;
         case S_RELEASE:
@@ -86,6 +89,7 @@ void tick_sneeze(void)
             {
                 digitalWrite(l_release_valve, LOW);
                 sneeze_state = S_IDLE;
+                Serial.println("IDLE");
             }
             break;
     }

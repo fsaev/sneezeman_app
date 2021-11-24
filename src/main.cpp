@@ -27,6 +27,7 @@
 uint8_t heartbeat_state = 0;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(SB_T1, OUTPUT);
   pinMode(SB_T2, OUTPUT);
   pinMode(SB_T3, OUTPUT);
