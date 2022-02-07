@@ -49,7 +49,7 @@ void tick_vl53(void)
         uint16_t dist = get_dist_mm_vl53();
         last_time = millis();
         if(sneeze_trigger == 0){
-            if(get_dist_mm_vl53() < l_config->data.vl53_trigger_distance)
+            if(dist < l_config->data.vl53_trigger_distance && dist != 0)
             {
                 if(threshold_count++ > l_config->data.vl53_trigger_count){
                     sneeze_trigger = 1;
