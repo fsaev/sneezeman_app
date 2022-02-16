@@ -16,7 +16,7 @@ void init_config(void)
 void default_config(void)
 {
     config.version = 1;
-    config.data = {.vl53_update_interval = 100, .vl53_trigger_distance = 200, .vl53_trigger_count = 5};
+    config.data = {.vl53_update_interval = 100, .vl53_trigger_distance = 150, .vl53_trigger_count = 5};
 }
 
 void read_config(void)
