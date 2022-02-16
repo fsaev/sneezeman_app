@@ -50,7 +50,11 @@ void tick_vl53(void)
         Serial.println(dist);
         last_time = millis();
         if(sneeze_trigger == 0){
+<<<<<<< HEAD
             if((dist < l_config->data.vl53_trigger_distance) && dist != 0)
+=======
+            if(dist < l_config->data.vl53_trigger_distance && dist != 0)
+>>>>>>> e5504e405df4d4669a2c7ce4c7b9a5ddcb890263
             {
                 if(threshold_count++ > l_config->data.vl53_trigger_count){
                     sneeze_trigger = 1;
